@@ -1,0 +1,238 @@
+// -------------reset------------------
+// style區
+@import './variables';
+
+* {
+    box-sizing: border-box;
+    outline: none;
+    // margin: 0;
+    // padding: 0;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', 'Literata', 'Noto Sans TC', Arial, Helvetica, sans-serif;
+    line-height: 1.5rem;
+    scroll-behavior: smooth;
+}
+
+a {
+    color: #63636b;
+}
+
+li {
+    list-style-type: none;
+    float: left;
+    cursor: pointer;
+}
+
+button {
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.fl-nowrap {
+    flex-wrap: nowrap;
+}
+
+.fl-wrap {
+    flex-wrap: wrap;
+}
+
+// -----------------------font bold-----------------------
+.fw-bold {
+    font-weight: bold;
+}
+
+// --------------------button-------------------------------
+// 藍色按鈕
+.bt-nav-1 {
+    font-size: 1rem;
+    color: #fff;
+    width: 40%;
+    height: auto;
+}
+
+// 黑色邊框按鈕
+.bt-nav-2 {
+    font-size: 1rem;
+    color: #000;
+    width: 40%;
+    height: auto;
+}
+
+// 藍色按鈕背景
+.bt-back-1 {
+    background: linear-gradient(to right, #2876e2 0, #3f8efc 100%)
+}
+
+.bt-back-1:hover {
+    background: linear-gradient(to right, #3f8efc 0, #2876e2 100%)
+}
+
+// 黑色邊框按鈕背景
+.bt-back-2 {
+    background: #00000000;
+    border: 1px solid #000;
+}
+
+.bt-back-2:hover {
+    background: #000;
+    color: #fff;
+    transition-duration: 0.3s;
+}
+
+// 水波紋效果
+.ripple {
+    position: relative;
+    //隐藏溢出的径向渐变背景
+    overflow: hidden;
+}
+
+.ripple:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    //设置径向渐变
+    background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform .3s, opacity .5s;
+}
+
+.ripple:active:after {
+    transform: scale(0, 0);
+    opacity: .3;
+    //设置初始状态
+    transition: 0s;
+}
+
+// -----------------width, height------------
+.w-100 {
+    width: 100%;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+// -----------------flex---------------------
+// style 區
+.d-flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-1 {
+    flex-grow: 1;
+}
+
+// style 區
+@each $key,
+$value in $flex-jc {
+    .jc-#{$key} {
+        justify-content: $value;
+    }
+}
+
+// style 區
+@each $key,
+$value in $flex-ai {
+    .ai-#{$key} {
+        align-items: $value;
+    }
+}
+
+// ------------------spacing-------------------
+// style 區
+@each $typeKey,
+$type in $spacing-types {
+
+    // .m-1
+    @each $sizeKey,
+    $size in $spacing-sizes {
+        .#{$typeKey}-#{$sizeKey} {
+            #{$type}: $size * $spacing-base-size;
+        }
+    }
+
+    // mx-1
+    @each $sizeKey,
+    $size in $spacing-sizes {
+        .#{$typeKey}x-#{$sizeKey} {
+            #{$type}-left: $size * $spacing-base-size;
+            #{$type}-right: $size * $spacing-base-size;
+        }
+
+        .#{$typeKey}y-#{$sizeKey} {
+            #{$type}-top: $size * $spacing-base-size;
+            #{$type}-bottom: $size * $spacing-base-size;
+        }
+    }
+
+    // .mt-1
+    @each $directionKey,
+    $direction in $spacing-direction {
+
+        @each $sizeKey,
+        $size in $spacing-sizes {
+            .#{$typeKey}#{$directionKey}-#{$sizeKey} {
+                #{$type}-#{$direction}: $size * $spacing-base-size;
+            }
+        }
+    }
+}
+
+// ---------------colors--------------------
+
+// style區
+@each $colorkey,
+$color in $colors {
+    .text-#{$colorkey} {
+        color: $color;
+    }
+
+    .bg-#{$colorkey} {
+        background-color: $color;
+    }
+}
+
+// ----------------text align-----------------
+// style區
+@each $var in (left, center, right) {
+    .text-#{$var} {
+        text-align: $var;
+    }
+}
+
+// -----------------font-size------------------
+
+// stlye 區
+@each $sizeKey,
+$size in $font-sizes {
+    .fs-#{$sizeKey} {
+        font-size: $size * $base-font-size;
+    }
+}
+
+@media all and (max-width: 500px) {
+    html {
+        font-size: 13px;
+    }
+}
+
+// ---------------動畫區-----------------------

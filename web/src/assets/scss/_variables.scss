@@ -1,0 +1,71 @@
+
+// ---------------------flex----------------------
+// 變量區
+$flex-jc: (
+    start: flex-start,
+    end: flex-end,
+    center: center,
+    between: space-between,
+    around: space-around,
+);
+
+// 變量區
+$flex-ai: (
+    start: flex-start,
+    end: flex-end,
+    center: center,
+    stretch: stretch,
+);
+
+// ------------------spacing-------------------
+// 變量區
+$spacing-types: (m :margin, p: padding);
+$spacing-direction:(t: top, r: right, b: bottom, l: left);
+$spacing-base-size: 1rem;
+$spacing-sizes: (
+    0: 0,
+    1: 0.25, 
+    2: 0.5, 
+    3: 1, 
+    4: 1.5, 
+    5: 3,
+    6: 4,
+    7: 5,
+    8: 6,
+    9: 7,
+);
+
+// ---------------colors--------------------
+// 變量區
+$colors: (
+    primary: #2c7ae7,
+    "white": #fff,
+    "white-1": rgba(255, 255, 255, 0.7),
+    "white-2": rgba(255, 255, 255, 0.06),
+    "white-3": rgba(255, 255, 255, 0.07),
+    "light-blue": #3f8efc,
+    "light-green":#dff9d9,
+    "dark-grey": #303036,
+    "light-grey": #63636b,
+    "light-grey-1": #f0f4f8,
+    "light-grey-2": #d4d4e1,
+    "black": #000,
+    "light-black": rgba(0, 0, 0, 0.15),
+    "none": #00000000,
+);
+
+// -----------------font-size------------------
+// 變量區
+$base-font-size: 1rem;
+$font-sizes: (
+    xxs: 0.8125, //13px
+    xs: 0.875, //14px
+    md: 1, //16px
+    lgs: 1.125, //18px
+    lg: 1.25, //20px
+    xl: 1.5, //24px
+    xlx: 1.875, //30px
+    xxl: 2.5, //40px
+    xxxl: 2.8125, //45px
+    xxxxl: 9.0625, //145px
+);
